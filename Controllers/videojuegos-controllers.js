@@ -123,8 +123,8 @@ const getVideojuegosRetroById = (req, res, next) => {
 };
 
 const getVideojuegosRetroByUsers = (req, res, next)=>{
-    const videojuego = DUMMY_GAMES.find(p => {
-        return p.creator === req.params.uid
+    const videojuego = DUMMY_GAMES.find(g => {
+        return g.creator === req.params.uid
     });    
 
     if (!videojuego){
@@ -162,8 +162,8 @@ const updateVideojuegoRetro = (req, res, next) =>{
 
 const deleteVideojuegoRetro = (req, res, next) => {
     const VideojuegoRetroId = req.params.pid;
-    DUMMY_GAMES = DUMMY_GAMES.filter(p => p.id !== VideojuegoRetroId)
-    res.status(200).json({message: 'Lugar Borrado'});
+    DUMMY_GAMES = DUMMY_GAMES.filter(g => g.id !== VideojuegoRetroId)
+    res.status(200).json({message: 'Videojuego Retro Borrado'});
 };
 
 exports.getAllVideojuegosRetro = getAllVideojuegosRetro;
